@@ -23,12 +23,20 @@ class StringControllerTest {
     }
 
     @Test
-    void getLengthOfStringTest(){
+    void getValueOfStringTest(){
         StringController controller = new StringController();
         String word = controller.getLastWord("hello");
 
         assertEquals("hello", word);
     }
 
+    @Test
+    void getLengthOfStringTest(){
+        StringController controller = new StringController();
+        String modifiedString = controller.modifyString("hello");
+        int word = controller.getLastWordLength();
+
+        assertEquals(5, word);
+    }
 
 }

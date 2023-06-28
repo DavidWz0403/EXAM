@@ -30,6 +30,12 @@ public class StringController {
     }
 
 
-
+    @GetMapping("/modify/length")
+    public int getLastWordLength() {
+        if (lastWord == null) {
+            return 0;
+        }
+        return this.lastWord.length();
+    }
 
 }
