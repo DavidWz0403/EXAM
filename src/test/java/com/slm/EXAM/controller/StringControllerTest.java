@@ -21,4 +21,14 @@ class StringControllerTest {
 
         assertNotEquals("hELLO", modifiedString);
     }
+
+    @Test
+    void getLengthOfStringTest(){
+        StringController controller = new StringController();
+        String word = controller.getLastWord("hello");
+
+        assertEquals("hello", word);
+    }
+
+
 }

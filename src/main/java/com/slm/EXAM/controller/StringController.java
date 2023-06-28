@@ -4,8 +4,15 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class StringController {
 
+    private String lastWord;
+
     @PostMapping("/modify")
     public String modifyString(@RequestBody String input) {
+        String modifiedString = convertString(input);
+        this.lastWord = getLastWord(modifiedString);
+        return modifiedString;
+    }
+    public String convertString(String input) {
         StringBuilder sb = new StringBuilder(input.length());
 
         for (int i = 0; i < input.length(); i++) {
@@ -17,4 +24,12 @@ public class StringController {
         }
         return sb.toString();
     }
+
+    public String getLastWord(String input) {
+        return input.split(" ")[input.split(" ").length - 1];
+    }
+
+
+
+
 }
